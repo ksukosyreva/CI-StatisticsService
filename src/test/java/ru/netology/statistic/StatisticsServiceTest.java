@@ -17,4 +17,15 @@ public class StatisticsServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldFindMaxIfNotFirstMonth () {
+        StatisticsService service = new StatisticsService();
+
+        long[] incomesInBillions ={3,8,15,10,6,4,11,18,15,5,4,7};
+        long expected = 18;
+        long actual = service.findMax(incomesInBillions);
+
+        Assertions.assertEquals(expected, actual);
+    }
 }
